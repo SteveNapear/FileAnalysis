@@ -77,7 +77,7 @@ namespace Parser.Model {
 		private static int isElement(string ss, out double de) {
 			de = 0.0;
 			if (ss is null || ss.Length == 0) return -1;
-			bool bOK = false; int ix;
+			int ix;
 			if (ss[0] == '(') {
 				string s = ss.Substring(1);
 				ix = isexpression(s, out double dex);

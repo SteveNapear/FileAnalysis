@@ -45,7 +45,7 @@ namespace Parser {
 		private void OnParse(object sender, RoutedEventArgs e) {
 			sParse = ParseTBox.Text.Trim();
 			sParse = test4;
-			bool bOK = CParser.TryParseExp(sParse, out double dv);
+			bool bOK = Model.CParser.TryParseExp(sParse, out double dv);
 			S2.Text = sParse + " ==> " + dv.ToString("f5");
 			//			bool bOK = CIntParser.TryParseExp(sParse, out int v);
 			AnsTB.Text = (bOK) ? dv.ToString("f5") : "Error";
@@ -82,7 +82,7 @@ namespace Parser {
 			KeyboardDevice dev = e.KeyboardDevice;
 			ModifierKeys mkeys = dev.Modifiers;
 			sParse = B.Text.Trim();
-			bool bOK = CParser.TryParseExp(sParse, out double v);
+			bool bOK = Model.CParser.TryParseExp(sParse, out double v);
 			AnsTB.Text = (bOK) ? v.ToString("f5") : string.Empty;
 		}
 
